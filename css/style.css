@@ -72,6 +72,28 @@ ul li {
   font-weight: bold;
 }
 
+h2 {
+  color: var(--accent-terrary);
+}
+
+h3 {
+  color: var(--accent-secondary);
+}
+.who-im-i {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.who-im-i h1 {
+  font-size: 20px;
+}
+.who-im-i p {
+  margin: 0;
+}
+
 .project-grid {
   display: flex;
   flex-wrap: wrap;
@@ -176,7 +198,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 0;
 }
 
 nav a {
