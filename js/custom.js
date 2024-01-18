@@ -37,5 +37,5 @@ document.addEventListener('DOMContentLoaded', function () {
     body.classList.remove('dark-mode');
     iconMode.classList.remove('at-sunny-bold');
     iconMode.classList.add('at-moon-bold');
-  }
+  } 
 });

@@ -31,7 +31,12 @@ header {
   background-color: var(--fg-color);
   color: var(--bg-color);
   padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
+
 
 header h1 {
   margin: 0;
@@ -43,6 +48,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  order: 2;
 }
 
 nav a {
@@ -59,6 +65,11 @@ nav a:hover {
 
 section {
   padding: 50px 0;
+  scroll-margin-top: 88px; 
+}
+
+#summary {
+  margin-top: 88px;
 }
 
 ul {
@@ -81,14 +92,26 @@ h3 {
 }
 .who-im-i {
   display: flex;
+  order: 1;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   gap: 6px;
 }
 
-.who-im-i h1 {
-  font-size: 20px;
+@media (max-width: 1040px) {
+  .who-im-i h1 {
+    font-size: 14px;
+  }
+  .who-im-i p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1040px) {
+  .who-im-i h1 {
+    font-size: 20px;
+  }
 }
 .who-im-i p {
   margin: 0;
@@ -228,6 +251,9 @@ nav a:hover {
 
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
+  .who-im-i {
+    width: 80%;
+  }
   .mobile-menu-btn {
     display: block;
   }
@@ -237,7 +263,7 @@ nav a:hover {
     text-align: center;
     display: none;
     position: absolute;
-    top: 60px;
+    top: 88px;
     left: 0;
     right: 0;
     background-color: var(--fg-color);
@@ -253,9 +279,7 @@ nav a:hover {
 
   .burger-icon {
     display: flex;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    order: 3;
     font-size: 1.5em;
     color: var(--bg-color);
     cursor: pointer;
@@ -272,6 +296,16 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
 }
+
+#darkModeToggle {
+  order: 2;
+  display: flex;
+}
+
+#modeIcon {
+  font-size: 24px;
+}
+
 #darkModeToggle:hover {
   color: var(--accent-primary);
 }
