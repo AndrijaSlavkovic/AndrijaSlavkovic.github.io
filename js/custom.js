@@ -28,4 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
   });
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  if (darkThemeMq.matches) {
+    body.classList.toggle('dark-mode');
+    iconMode.classList.add('at-sunny-bold');
+    iconMode.classList.remove('at-moon-bold');
+  } else {
+    body.classList.remove('dark-mode');
+    iconMode.classList.remove('at-sunny-bold');
+    iconMode.classList.add('at-moon-bold');
+  }
 });
