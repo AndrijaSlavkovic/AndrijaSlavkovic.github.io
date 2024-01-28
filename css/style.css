@@ -324,3 +324,8 @@ nav a:hover {
 .hidden {
   display: none !important;
 }
+
+img.sunny, img.moon {
+  width: 24px;
+  height: 24px;
+}
