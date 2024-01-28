@@ -285,9 +285,19 @@ nav a:hover {
     cursor: pointer;
   }
 
-  .burger-icon:hover {
+
+  .burger-icon svg {
+    color: var(--bg-color);
+  }
+
+  .burger-icon:hover svg {
     color: var(--accent-primary);
   }
+
+  .header.active .burger-icon svg {
+    color: var(--accent-primary);
+  }
+
 }
 
 .header {
@@ -309,4 +319,8 @@ nav a:hover {
 
 #darkModeToggle:hover {
   color: var(--accent-primary);
+}
+
+.hidden {
+  display: none !important;
 }

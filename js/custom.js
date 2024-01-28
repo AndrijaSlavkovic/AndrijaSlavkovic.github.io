@@ -3,16 +3,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileNav = document.querySelector('nav');
   const darkModeToggle = document.querySelector('#darkModeToggle');
   const body = document.body;
-  const iconMode = document.querySelector('#modeIcon');
+  const moon = document.querySelector('.moon');
+  const sunny = document.querySelector('.sunny');
+  const header = document.querySelector('.header');
 
   burgerIcon.addEventListener('click', function () {
     mobileNav.classList.toggle('active');
+    header.classList.toggle('active');
   });
 
   // Close the mobile menu when a link is clicked
   mobileNav.addEventListener('click', function (event) {
     if (event.target.tagName === 'A') {
       mobileNav.classList.remove('active');
+      header.classList.remove('active');
     }
   });
   // Toggle dark mode
@@ -20,22 +24,22 @@ document.addEventListener('DOMContentLoaded', function () {
     body.classList.toggle('dark-mode');
 
     if (body.classList.contains('dark-mode')) {
-      iconMode.classList.add('at-sunny-bold');
-      iconMode.classList.remove('at-moon-bold');
+      moon.classList.toggle('hidden');
+      sunny.classList.toggle('hidden');
     } else {
-      iconMode.classList.remove('at-sunny-bold');
-      iconMode.classList.add('at-moon-bold');
+      moon.classList.toggle('hidden');
+      sunny.classList.toggle('hidden');
     }
     
   });
   const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
   if (darkThemeMq.matches) {
     body.classList.toggle('dark-mode');
-    iconMode.classList.add('at-sunny-bold');
-    iconMode.classList.remove('at-moon-bold');
+    moon.classList.toggle('hidden');
+    sunny.classList.toggle('hidden');
   } else {
     body.classList.remove('dark-mode');
-    iconMode.classList.remove('at-sunny-bold');
-    iconMode.classList.add('at-moon-bold');
+    moon.classList.toggle('hidden');
+    sunny.classList.toggle('hidden');
   } 
 });
